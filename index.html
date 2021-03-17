@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+	
+<head>
+<title>Schäfchen Spiel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="elements/style/style.css"/>
+<link rel="icon" href="elements/pictures/white_sheep.png">
+
+</head>
+<body>
+
+<!--Navbar-->
+<nav>
+	<img src="elements/pictures/dice.png" class="img_normal img_hover" title="Würfeln" onclick="dice()">
+	<img src="elements/pictures/confirm.png" class="img_small img_hover img_confirm" title="Würfeln" onclick="nextDice('clover')" id="confirm">
+	<div class="nav_left">
+		<img src="elements/pictures/instructions.png" class="img_small img_hover" title="Spielanleitung" onclick="">
+		<img src="elements/pictures/restart.png" class="img_small img_hover" title="Neu Starten" onclick="">
+		<img src="elements/pictures/settings.png" class="img_small img_hover" title="Einstellungen" onclick="">
+	</div>
+</nav>
+
+
+<!--Content-->
+
+
+<main>
+
+
+	<div class="player_box">
+		<div class="path">
+			<div class="goal">
+				<img src="elements/pictures/white_sheep.png" class="img_normal" id="player0" data-points="0">
+			</div>
+		</div>
+		
+		<div class="path">
+			<div class="goal">
+				<img src="elements/pictures/black_sheep.png" class="img_normal" id="player1" data-points="0">
+			</div>
+		</div>
+	</div>
+	
+
+	
+
+</main>
+
+<div id="clover" class="img_dice">
+	<img src="elements/pictures/clover.png" class="img_big">
+</div>
+
+<div id="wolf" class="img_dice">
+	<img src="elements/pictures/wolf.png" class="img_big">
+</div>
+
+
+<!--Scripts-->
+<script language="javascript" type="text/javascript" src="elements/javascript/sheep-game.js"></script>
+<!--<script language="javascript" type="text/javascript" src="elements/javascript/footer.js"></script>-->
+
+</body>
+</html>
