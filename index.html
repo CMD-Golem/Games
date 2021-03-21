@@ -6,58 +6,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="elements/style/style.css"/>
-<link rel="icon" href="elements/pictures/white_sheep.png">
+<link rel="stylesheet" type="text/css" href="elements/style/sheep-game.css"/>
+<link rel="icon" href="elements/pictures/sheeps/white_sheep.png">
 
 </head>
 <body>
 
 <!--Navbar-->
 <nav>
-	<img src="elements/pictures/dice.png" class="img_normal img_hover" title="Würfeln" onclick="dice()">
-	<img src="elements/pictures/confirm.png" class="img_small img_hover img_confirm" title="Würfeln" onclick="nextDice('clover')" id="confirm">
+	<img src="elements/pictures/dice.svg" class="img_normal img_hover" title="Würfeln" onclick="dice()">
+	<img src="elements/pictures/confirm.svg" class="img_small img_hover img_confirm" title="Fertig" onclick="nextDice('clover')" id="confirm">
 	<div class="nav_left">
-		<img src="elements/pictures/instructions.png" class="img_small img_hover" title="Spielanleitung" onclick="">
-		<img src="elements/pictures/restart.png" class="img_small img_hover" title="Neu Starten" onclick="">
-		<img src="elements/pictures/settings.png" class="img_small img_hover" title="Einstellungen" onclick="">
+		<img src="elements/pictures/instructions.svg" class="img_small img_hover" title="Spielanleitung" onclick="instructions()">
+		<img src="elements/pictures/restart.svg" class="img_small img_hover" title="Neu Starten" onclick="restart()">
+		<img src="elements/pictures/settings.svg" class="img_small img_hover" title="Einstellungen" onclick="location.href='settings.html';">
 	</div>
 </nav>
 
 
 <!--Content-->
 
-
 <main>
+	<!--Gameboard-->
+	<div class="player_box" id="player_box"></div>
 
-
-	<div class="player_box">
-		<div class="path">
-			<div class="goal">
-				<img src="elements/pictures/white_sheep.png" class="img_normal" id="player0" data-points="0">
-			</div>
-		</div>
-		
-		<div class="path">
-			<div class="goal">
-				<img src="elements/pictures/black_sheep.png" class="img_normal" id="player1" data-points="0">
-			</div>
-		</div>
+	<!--Dice-->
+	<div id="clover" class="img_dice">
+		<img src="elements/pictures/clover.svg" class="img_big">
 	</div>
-	
+	<div id="wolf" class="img_dice">
+		<img src="elements/pictures/wolf.svg" class="img_big">
+	</div>
 
-	
+	<!--Medal-->
+	<img src="elements/pictures/medal.svg" id="medal">
 
 </main>
 
-<div id="clover" class="img_dice">
-	<img src="elements/pictures/clover.png" class="img_big">
-</div>
-
-<div id="wolf" class="img_dice">
-	<img src="elements/pictures/wolf.png" class="img_big">
-</div>
+<aside>
+	<h1>Schäfchenspiel Anleitung</h1>
+	<p>Das weisse Schaf beginnt mit Würfeln.</p>
+	<p>Wenn es ein Kleeblatt bekommt, kann es nochmales würfeln und zwar so oft, wie der Spieler möchte.<br>Allerdings muss es wieder zurück, wo es zu Beginn der Runde gestanden hatte, wenn der Spieler ein Wolf würfelt.<br>Um den Spielzug zu beenden, ohne das ein Wolf gewürfelt wurde, kann <span title="Das Häckchen neben dem Würfel">Fertig</span> gedrückt werden.</p>
+	<p>Das Schaf, welches als erstes im Ziel ist, gewinnt das Spiel</p>
+</aside>
 
 
 <!--Scripts-->
+<script language="javascript" type="text/javascript" src="elements/javascript/sheep-game-var.js"></script>
 <script language="javascript" type="text/javascript" src="elements/javascript/sheep-game.js"></script>
 <!--<script language="javascript" type="text/javascript" src="elements/javascript/footer.js"></script>-->
 

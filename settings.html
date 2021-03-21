@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+	
+<head>
+<title>Einstellungen Schäfchen Spiel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="elements/style/style.css"/>
+<link rel="stylesheet" type="text/css" href="elements/style/sheep-game-settings.css"/>
+<link rel="icon" href="elements/pictures/sheeps/white_sheep.png">
+
+</head>
+<body>
+
+<!--Navbar-->
+<nav onclick="location.href='index.html';">
+	<img src="elements/pictures/dice.svg" class="img_normal img_hover" title="Würfeln">
+	<img src="elements/pictures/confirm.svg" class="img_small img_hover img_confirm" title="Fertig">
+	<div class="nav_left">
+		<img src="elements/pictures/instructions.svg" class="img_small img_hover" title="Spielanleitung">
+		<img src="elements/pictures/restart.svg" class="img_small img_hover" title="Neu Starten">
+		<img src="elements/pictures/settings.svg" class="img_small img_hover" title="Einstellungen">
+	</div>
+</nav>
+
+
+<!--Content-->
+
+<main class="settings_box">
+	<h1>Schäfchenspiel Einstellungen</h1>
+	<table style="margin-left: auto; margin-right: auto;">
+		<tr>
+			<td><p>Wie viel Schritte bis zum Ziel: &#8199; </p></td>
+			<td><span contenteditable="true" id="goal_points"></span></td>
+		</tr>
+	</table>
+	<button onclick="apply()">Bestätigen</button>
+
+	<p>Ändere die Reihenfolge der Spieler und wähle die Anzahl aus:</p>
+
+	<div class="status">Ausgewählte:</div>
+	<div class="dragbox" id="player_selected"></div>
+
+
+	<div class="status">Deaktivierte:</div>
+	<div class="dragbox" id="player_deactivated"></div>
+
+	<button onclick="apply()">Bestätigen</button>
+	
+</main>
+
+
+<!--Scripts-->
+<script language="javascript" type="text/javascript" src="elements/javascript/sheep-game-var.js"></script>
+<script language="javascript" type="text/javascript" src="elements/javascript/sheep-game-settings.js"></script>
+
+<!--<script language="javascript" type="text/javascript" src="elements/javascript/footer.js"></script>-->
+
+</body>
+</html>

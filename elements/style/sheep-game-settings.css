@@ -1,0 +1,75 @@
+.settings_box {
+	padding: 50px 20px;
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.settings_box span {
+	background-color: #333333;
+	padding: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	margin-bottom: 10px;
+	outline: none;
+}
+
+.settings_box button {
+	margin-top: 50px;
+	text-align: center;
+	color: white;
+	background-color: transparent;
+	font-size: 15px;
+	padding: 10px;
+	border: 2px solid #007AD9;
+	outline: none;
+	transition: 0.5s;
+}
+
+.settings_box button:hover {
+	border: 2px solid #009747;
+}
+
+.dragbox {
+	padding: 10px;
+}
+
+.status {
+	margin-top: 15px;
+}
+
+.path {
+	padding: 5px;
+	background-color: #222222;
+	cursor: move;
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+.path:first-child:last-child {
+	border-radius: 10px 10px 10px 10px;
+}
+.path:first-child {
+	border-radius: 10px 10px 0 0;
+}
+.path:last-child {
+	border-radius: 0 0 10px 10px;
+}
+
+.goal {
+	width: 40%;
+}
+
+
+.path.dragging {
+	background-color: #333333;
+}
+
+
+
+@media screen and (max-width: 1240px) {
+	.settings_box {
+		width: calc(100vw - 40px);
+	}
+}
