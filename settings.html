@@ -28,25 +28,29 @@
 
 <main class="settings_box">
 	<h1>Schäfchenspiel Einstellungen</h1>
+	<button onclick="apply()">Bestätigen</button>
 	<table style="margin-left: auto; margin-right: auto;">
 		<tr>
 			<td><p>Wie viel Schritte bis zum Ziel: &#8199; </p></td>
 			<td><span contenteditable="true" id="goal_points"></span></td>
 		</tr>
 	</table>
-	<button onclick="apply()">Bestätigen</button>
 
-	<p>Ändere die Reihenfolge der Spieler und wähle die Anzahl aus:</p>
+	<p class="dragbox_info">Ändere die Reihenfolge der Spieler und wähle die Anzahl aus:</p>
 
-	<div class="status">Ausgewählte:</div>
-	<div class="dragbox" id="player_selected"></div>
+	<div class="dragbox_border">
+		<div class="status">
+			Ausgewählte:
+			<div class="dragbox" id="player_selected"></div>
+		</div>
+		
 
+		<div class="status">
+			Deaktivierte:
+			<div class="dragbox" id="player_deactivated"></div>
+		</div>	
+	</div>
 
-	<div class="status">Deaktivierte:</div>
-	<div class="dragbox" id="player_deactivated"></div>
-
-	<button onclick="apply()">Bestätigen</button>
-	
 </main>
 
 

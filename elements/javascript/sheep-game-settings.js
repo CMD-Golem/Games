@@ -29,28 +29,38 @@ el_goal_points.addEventListener("input", detectGoal);
 
 
 // Test if player count isn't zero
+var removed_dragbox = false;
+
 function detectPlayer() {
-	if (el_player_selected.getElementsByClassName("path").length <= 2) {
+	if (el_player_selected.getElementsByClassName("path").length <= 1) {
 		el_player_deactivated.classList.remove("dragbox");
+		removed_dragbox = true;
+		repairDrag()
+
 		console.log("remove")
 	}
-	else {
+	else if (removed_dragbox != false) {
 		el_player_deactivated.classList.add("dragbox");
+		removed_dragbox = false;
+		repairDrag()
+
 		console.log("add")
 	}
 }
 
-//document.addEventListener("dragstart", detectPlayer);
+function repairDrag() {
+	// Clone Element and replace it
+	var el_player_deactivated_clone = el_player_deactivated.cloneNode(true);
+	el_player_deactivated.parentNode.replaceChild(el_player_deactivated_clone, el_player_deactivated);
 
+	// Refresh var
+	el_player_deactivated = document.getElementById("player_deactivated");
 
-// Set setting in html
-function setSettings() {
-	var goal_html = parseInt(goal_points) + 1;
-	el_goal_points.innerHTML = goal_html;
-
-	el_player_selected.innerHTML = player_selected;
-	el_player_deactivated.innerHTML = player_deactivated;
+	setDrag()
 }
+
+el_player_selected.addEventListener("dragstart", detectPlayer);
+
 
 function apply() {
 	// Set player
@@ -72,8 +82,6 @@ function apply() {
 		el_goal_points.innerHTML = goal_html;
 
 		el_goal_points.style.backgroundColor = "#333333";
-
-		console.log("Couldn't Change")
 	}
 }
 
@@ -86,11 +94,8 @@ var draggables, dragboxes
 setDrag()
 
 function setDrag() {
-	var dragboxes = undefined;
 	var draggables = document.querySelectorAll('.path')
 	var dragboxes = document.querySelectorAll('.dragbox')
-
-	console.log(dragboxes)
 
 	draggables.forEach(draggable => {
 		draggable.addEventListener('dragstart', () => {

@@ -1,8 +1,9 @@
 .settings_box {
-	padding: 50px 20px;
+	padding: 0 20px;
 	width: 1200px;
 	margin: 0 auto;
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .settings_box span {
@@ -15,7 +16,6 @@
 }
 
 .settings_box button {
-	margin-top: 50px;
 	text-align: center;
 	color: white;
 	background-color: transparent;
@@ -30,22 +30,27 @@
 	border: 2px solid #009747;
 }
 
+.dragbox_border {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 .dragbox {
 	padding: 10px;
 }
 
 .status {
 	margin-top: 15px;
+	width: 40%;
+	margin: 0 auto;
 }
 
 .path {
 	padding: 5px;
 	background-color: #222222;
 	cursor: move;
-	width: 50%;
-	margin: 0 auto;
 }
-
 
 .path:first-child:last-child {
 	border-radius: 10px 10px 10px 10px;
@@ -58,18 +63,35 @@
 }
 
 .goal {
-	width: 40%;
+	width: 100%;
 }
-
 
 .path.dragging {
 	background-color: #333333;
 }
 
-
-
 @media screen and (max-width: 1240px) {
 	.settings_box {
 		width: calc(100vw - 40px);
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	.dragbox_border {
+		display: block;
+	}
+	.status {
+		padding: 5px 5vw 5px 5vw;
+		width: calc(100% - 10vw);
+	}
+}
+
+@media (pointer: coarse) {
+	.dragbox_border {
+		display: none;
+	}
+	.dragbox_info {
+		display: none;
 	}
 }

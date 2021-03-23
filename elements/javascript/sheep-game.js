@@ -40,7 +40,7 @@ function dice() {
 	window.scrollTo(0, scroll);
 
 	//Go to next dice when number is 1 or lower (wolf)
-	if (dice_face <= 1) {
+	if (dice_face <= 2) {
 		console.log("wolf: " + dice_face);
 
 		document.getElementById("wolf").classList.add("img_dice_1");
@@ -48,12 +48,17 @@ function dice() {
 		setTimeout(function(){ nextDice("wolf") }, 1350);
 	}
 	//Move sheep wehn number is higher then 1
-	if (dice_face > 1) {
+	if (dice_face > 2) {
 		console.log("clover: " + dice_face);
 
 		document.getElementById("clover").classList.add("img_dice_1");
 		setTimeout(function(){ removeDiceImg("clover") }, 700);
 		setTimeout(function(){ cloverDice() }, 1350);
+	}
+
+	// Hide settings if display is to small
+	if (screen.width <= 450) {
+		document.getElementById("smallHide").style.display = "none";
 	}
 }
 
@@ -168,6 +173,7 @@ function instructions() {
 function restart() {
 	document.getElementById("medal").style.display = "none";
 	document.getElementById("confirm").style.display = "none";
+	document.getElementById("smallHide").style.display = "";
 	document.getElementById("clover").classList.remove("img_dice_2");
 
 	var player_reset = document.getElementById("player_box").getElementsByTagName("img");
