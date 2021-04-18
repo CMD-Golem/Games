@@ -4,6 +4,7 @@ self.addEventListener('install', function(event) {
 			return cache.addAll(
 				[
 					"./",
+					"./index.html",
 					"./settings.html",
 					"./elements/javascript/sheep-game.js",
 					"./elements/javascript/sheep-game-settings.js",
