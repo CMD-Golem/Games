@@ -3,7 +3,6 @@ var img_height = 80; //Image Height
 document.getElementById("player_box").innerHTML = player_selected;
 var player_box = document.getElementById("player_box");
 var player_count = player_box.getElementsByTagName("img").length - 1;
-var i;
 var player_counter = 0;
 
 
@@ -24,7 +23,7 @@ player_img = document.getElementById("player" + player_id);
 
 // Set goal position
 var path = document.getElementsByClassName("path");
-for (i = 0; i < path.length; i++) {
+for (var i = 0; i < path.length; i++) {
 	path[i].getElementsByClassName("goal")[0].style.height = goal_points * img_height + 2 * img_height + "px";
 	path[i].getElementsByClassName("goal")[0].style.width = img_height + "px";
 }
@@ -34,21 +33,17 @@ for (i = 0; i < path.length; i++) {
 // Detect Dice
 function dice() {
 	var dice_face = Math.floor(Math.random() * Math.floor(6));
-	
-	//Scroll to current player
-	var scroll = parseInt(player_img.getAttribute("data-points")) * img_height - window.innerHeight / 2 + 200;
-	window.scrollTo(0, scroll);
 
-	//Go to next dice when number is 1 or lower (wolf)
-	if (dice_face <= 2) {
+	//Go to next dice when number is lower than probability (wolf)
+	if (dice_face > probability) {
 		console.log("wolf: " + dice_face);
 
 		document.getElementById("wolf").classList.add("img_dice_1");
 		setTimeout(function(){ removeLastPoints() }, 700);
 		setTimeout(function(){ nextDice("wolf") }, 1350);
 	}
-	//Move sheep wehn number is higher then 1
-	if (dice_face > 2) {
+	//Move sheep wehn number is higher then probability (clover)
+	if (dice_face <= probability) {
 		console.log("clover: " + dice_face);
 
 		document.getElementById("clover").classList.add("img_dice_1");
@@ -121,6 +116,10 @@ function nextDice(action) {
 
 	//Get next player
 	player_id = playerId(player_id);
+
+	//Scroll to current player
+	var scroll = parseInt(player_img.getAttribute("data-points")) * img_height - window.innerHeight / 2 + 200;
+	window.scrollTo(0, scroll);
 }
 
 // Change player

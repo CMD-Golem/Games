@@ -5,7 +5,13 @@
 	margin-bottom: 50px;
 }
 
-.settings_box span {
+@media screen and (max-width: 1240px) {
+	.settings_box {
+		width: calc(100vw - 40px);
+	}
+}
+
+span {
 	background-color: #333333;
 	padding: 5px;
 	border-radius: 5px;
@@ -14,7 +20,7 @@
 	outline: none;
 }
 
-.settings_box button {
+button {
 	text-align: center;
 	color: white;
 	background-color: transparent;
@@ -25,10 +31,19 @@
 	transition: 0.5s;
 }
 
-.settings_box button:hover {
+button:hover {
 	border: 2px solid #009747;
 }
 
+.reset_button {
+	margin-left: 20px;
+	margin-bottom: 8px;
+	font-size: 25px;
+	padding: 5px 10px;
+}
+
+/* ####################################################################### */
+/* Dragbox */
 .dragbox_border {
 	display: flex;
 	flex-wrap: wrap;
@@ -68,13 +83,6 @@
 .path.dragging {
 	background-color: #333333;
 }
-
-@media screen and (max-width: 1240px) {
-	.settings_box {
-		width: calc(100vw - 40px);
-	}
-}
-
 
 @media screen and (max-width: 500px) {
 	.dragbox_border {

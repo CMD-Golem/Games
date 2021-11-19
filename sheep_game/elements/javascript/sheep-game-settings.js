@@ -1,9 +1,11 @@
 // Set Html
 // Points
 var el_goal_points = document.getElementById("goal_points");
-var goal_new = true;
-var goal_html = parseInt(goal_points) + 1;
-el_goal_points.innerHTML = goal_html;
+el_goal_points.innerHTML = goal_points + 1;
+
+// Probability
+var el_probability = document.getElementById("probability");
+el_probability.innerHTML = probability + 1;
 
 // Player
 var el_player_selected = document.getElementById("player_selected");
@@ -12,22 +14,61 @@ el_player_selected.innerHTML = player_selected;
 el_player_deactivated.innerHTML = player_deactivated;
 
 
+// ########################################################################
 // Test if input of goal is correct
 function detectGoal() {
 	input = parseInt(el_goal_points.innerHTML);
 	if (input >= 2) {
 		el_goal_points.style.backgroundColor = "#333333";
-		goal_new = true;
+
+		goal_points = parseInt(el_goal_points.innerHTML) - 1;
+		localStorage.setItem("sheep-game-goal", goal_points);
 	}
 	else {
 		el_goal_points.style.backgroundColor = "red";
-		goal_new = false;
 	}
 }
 
 el_goal_points.addEventListener("input", detectGoal);
 
+// Test if input of probability is correct
+function detectProbability() {
+	input = parseInt(el_probability.innerHTML);
+	if (input > 0 && input < 6) {
+		el_probability.style.backgroundColor = "#333333";
 
+		probability = parseInt(el_probability.innerHTML) - 1;
+		localStorage.setItem("sheep-game-probability", probability);
+	}
+	else {
+		el_probability.style.backgroundColor = "red";
+	}
+}
+
+el_probability.addEventListener("input", detectProbability);
+
+
+// ########################################################################
+// Reset Buttons
+function reset(variable) {
+	if (variable == "goal_points") {
+		goal_points = default_goal;
+		localStorage.setItem("sheep-game-goal", goal_points);
+
+		el_goal_points.innerHTML = goal_points + 1;
+	}
+
+	else if (variable == "probability") {
+		probability = default_probability;
+		localStorage.setItem("sheep-game-probability", probability);
+
+		el_probability.innerHTML = probability + 1;
+	}
+}
+
+
+
+// ########################################################################
 // Test if player count isn't zero
 var removed_dragbox = false;
 
@@ -61,33 +102,7 @@ function repairDrag() {
 
 el_player_selected.addEventListener("dragstart", detectPlayer);
 
-
-function apply() {
-	// Set player
-	var player_selected = el_player_selected.innerHTML;
-	var player_deactivated = el_player_deactivated.innerHTML;
-
-	localStorage.setItem("sheep-game-on", player_selected);
-	localStorage.setItem("sheep-game-off", player_deactivated);
-
-	// Set goal
-	if (goal_new == true) {
-		goal_points = parseInt(el_goal_points.innerHTML) - 1;
-		localStorage.setItem("sheep-game-goal", goal_points);
-
-		location.href= "index.html";
-	}
-	else {
-		goal_html = parseInt(goal_points) + 1;
-		el_goal_points.innerHTML = goal_html;
-
-		el_goal_points.style.backgroundColor = "#333333";
-	}
-}
-
-
-
-
+// ########################################################################
 // Sort Player
 // https://www.youtube.com/watch?v=jfYWwQrtzzY
 var draggables, dragboxes
@@ -104,6 +119,12 @@ function setDrag() {
 
 		draggable.addEventListener('dragend', () => {
 			draggable.classList.remove('dragging')
+			
+			var player_selected = el_player_selected.innerHTML;
+			var player_deactivated = el_player_deactivated.innerHTML;
+
+			localStorage.setItem("sheep-game-on", player_selected);
+			localStorage.setItem("sheep-game-off", player_deactivated);
 		})
 	})
 

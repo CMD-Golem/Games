@@ -1,3 +1,9 @@
+@font-face {
+	font-family: FiraSans;
+	src: url(../../../elements/fonts/fira_sans.ttf);
+	font-weight: normal;
+}
+
 html {
 	height: 100%;
 	scroll-behavior: smooth;
@@ -7,6 +13,7 @@ body {
 	margin: 0;
 	min-height: 100%;
 	font-size: 25px;
+	font-family: FiraSans;
 	color: #CCCCCC;
 	display: flex;
 	flex-direction: column;
@@ -116,72 +123,4 @@ hr {
 .disable_link:link, .disable_link:visited, .disable_link:hover, .disable_link:active {
 	color: inherit;
 	text-decoration-line: none;
-}
-
-
-/* ####################################################################### */
-/* Footer */
-footer {
-	background-color: #222222;
-	margin-top: auto;
-	height: 100px;
-	padding-right: 15%;
-	padding-left: 15%;
-	padding-top: 15px;
-	text-align: center;
-	display: flex;
-}
-
-.footer_block {
-	flex-grow: 1;
-}
-
-.footer_block a {
-	margin: 0 20px;
-}
-
-.footer_block a:hover, .footer_block a:focus {
-	outline: none;
-	filter: contrast(100%);
-}
-
-.footer_left {
-	text-align: left;
-	font-size: 12px;
-}
-
-.footer_center {
-	text-align: center;
-}
-
-.footer_right {
-	text-align: right;
-}
-
-.footer_right a {
-	filter: contrast(0%);
-}
-
-footer img {
-	height: 30px;
-}
-
-/* Transformation */
-@media screen and (max-width: 1300px) {
-	footer {
-		height: 160px;
-		flex-direction: column-reverse;
-		padding: 0;
-		padding-top: 15px;
-	}
-	.footer_block {
-		text-align: center;
-	}
-}
-
-/* Touch Screen Footer */
-@media (pointer: coarse) {
-	.footer_right a {
-		filter: contrast(100%);
-	}
 }

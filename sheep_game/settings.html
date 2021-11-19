@@ -27,12 +27,17 @@
 <!--Content-->
 
 <main class="settings_box">
-	<h1>Schäfchenspiel Einstellungen</h1>
-	<button onclick="apply()">Bestätigen</button>
-	<table style="margin-left: auto; margin-right: auto;">
+	<h1>Schäfchen&shy;spiel Einstellungen</h1>
+	<table style="margin: 20px auto; margin-bottom: 50px">
 		<tr>
-			<td><p>Wie viel Schritte bis zum Ziel: &#8199; </p></td>
+			<td>Wie viel Schritte bis zum Ziel: &#8199; </td>
 			<td><span contenteditable="true" id="goal_points"></span></td>
+			<td><button class="reset_button" onclick="reset('goal_points')">&#8635;</button></td>
+		</tr>
+		<tr>
+			<td>Wie viele Seiten des Würfels haben ein Kleeblatt: &#8199; </td>
+			<td><span contenteditable="true" id="probability"></span></td>
+			<td><button class="reset_button" onclick="reset('probability')">&#8635;</button></td>
 		</tr>
 	</table>
 
@@ -57,8 +62,6 @@
 <!--Scripts-->
 <script language="javascript" type="text/javascript" src="elements/javascript/sheep-game-var.js"></script>
 <script language="javascript" type="text/javascript" src="elements/javascript/sheep-game-settings.js"></script>
-
-<!--<script language="javascript" type="text/javascript" src="elements/javascript/footer.js"></script>-->
 
 </body>
 </html>
