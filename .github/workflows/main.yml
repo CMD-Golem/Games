@@ -14,4 +14,4 @@ jobs:
         server: ftp.samkirkland.com
         username: testfabftp
         password: ${{ secrets.ftp_password }}
-        server-dir: public_html/
+        server-dir: /public_html/
