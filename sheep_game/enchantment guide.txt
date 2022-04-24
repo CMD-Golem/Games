@@ -1,0 +1,27 @@
+14 lines per side
+
+/give @p written_book{pages:['[""
+,{"text":"Enchantment Guide","bold":true,"color":"dark_red"}
+,{"text":"\\n-------------------\\n","color":"reset"}
+
+,{"text":"3x3 Mining\\n","clickEvent":{"action":"change_page","value":2}}
+,{"text":"Auto Smelt\\n","clickEvent":{"action":"change_page","value":3}}
+
+
+]','["",
+{"text":"3x3 Mining","bold":true,"color":"blue"},
+{"text":"\\n--------------------\\nMines a three by three area\\n\\nMax Level: I\\nCompatible items:\\n","color":"reset"},
+{"text":"Pickaxe, Shovel","italic":true},
+{"text":"\\n\\nIncompatible:\\n","color":"reset"},
+{"text":"Vein Miner","italic":true}
+
+
+]','["",
+{"text":"Auto Smelt","bold":true,"color":"dark_red"},
+{"text":"\\n--------------------\\nSmelts blocks you mine\\n\\nMax Level: I\\nCompatible items:\\n","color":"reset"},
+{"text":"Pickaxe, Shovel","italic":true},
+{"text":"\\n\\nIncompatible:\\n","color":"reset"},
+{"text":"Silk Touch","italic":true}
+
+
+]'],title:"Enchantment Guide",author:"Powered Enchanting Data Pack"}
