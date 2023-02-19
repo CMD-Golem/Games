@@ -1,2 +1,2 @@
 # Games
-Self created games in german.
+Self made games
